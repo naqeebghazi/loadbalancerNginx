@@ -63,5 +63,47 @@ Configure the Apache servers to display a webpage showing the Public IP address:
 
 ![8000virtualHost](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/8000VirtualHost.png?raw=true)
 
-- Create new index.html file. This will contain the code to dsiaply the Public IP.
-- Override default html file with our new index file. 
+Restart Apache to load new config file changes:
+
+    $ sudo systemctl restart apache2
+
+- Create new index.html file. This will contain the code to display the Public IP.
+  Create and deit a new index file:
+
+        $ sudo vi index.html
+
+Then copy text below:
+
+                <!DOCTYPE html>
+        <html>
+        <head>
+            <title>My Apache2 EC2 Instance</title>
+        </head>
+        <body>
+            <h1>Welcome to my EC2 instance</h1>
+            <p>Public IP: YOUR_PUBLIC_IP</p>
+        </body>
+        </html>
+
+Ensure 'My Apache1 EC2 Instance' and 'My Apache2 EC2 Instance' are written in the respective instances.
+
+Change file ownership to ensure it executes appropriately:
+
+    $ sudo chown www-data:www-data ./index.html
+
+- Override default html file with our new index file.
+    Replace the default html file with our new one above:
+
+        $ sudo cp -f ./index.html /var/www/html/index.html
+
+Then restart the webserver to load new changes:
+
+    $ sudo systemctl restart apache2
+
+Get your public IP and paste this into your browser:
+
+    $ wget -qO- ifconfig.me
+
+Browser view:
+
+![browserInstancesview](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/browserinstances.png?raw=true)
