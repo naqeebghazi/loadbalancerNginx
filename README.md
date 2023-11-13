@@ -107,3 +107,51 @@ Get your public IP and paste this into your browser:
 Browser view:
 
 ![browserInstancesview](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/browserinstances.png?raw=true)
+
+## Configure Nginx as a Load Balancer
+
+Install Nginx on your nginx server before checking its running:
+
+    $ sudo apt update -y && sudo apt install nginx -y
+    $ sudo systemctl status nginx
+
+Open the nginx load balancer config file:
+
+    $ sudo vi /etc/nginx/conf.d/loadbalancer.conf
+
+Paste in the following, replacing whats there. then input your Public IP address from the Apache2 and Apache2 servers. 
+
+            
+        upstream backend_servers {
+
+            # your are to replace the public IP and Port to that of your webservers
+            server 8.130.242.214:8000; # public IP and port for Apache1
+            server 3.8.205.144:8000; # public IP and port for Apache2
+
+        }
+
+        server {
+            listen 80;
+            server_name 18.130.250.11; # Nginx load balancer public IP address
+
+            location / {
+                proxy_pass http://backend_servers;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+        }
+    
+Reload nginx and then test if the file config is ok:
+
+    $ sudo systemctl restart nginx
+    $ sudo nginx -t
+
+
+## Type of Load Balancer Algorithms
+
+1. Round robin
+2. Leaset connections
+3. Weighted round robin
+4. Weighted least connections
+
