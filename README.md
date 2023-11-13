@@ -25,3 +25,13 @@ The One Nginx Load Balancer SG config:
 Once complete, ssh into each instance into seperate terminals using your IDE (e.g. VSCode):
 
 ![](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/ec2terminals.png?raw=true)
+
+I have also edited the hostnames of each instance to identify each one better. You can do this by editing the hostname file:
+
+    $ sudo vim /etc/hostname
+
+Suggested names (or your choice):
+  Apache1Web
+  Apache2Web
+  nginxLB
+
