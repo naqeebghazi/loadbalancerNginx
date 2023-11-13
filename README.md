@@ -24,3 +24,7 @@ The One Nginx Load Balancer SG config:
 
 Now SSh into tyour servers using your local terminal:
 ![ec2terminals](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/ec2terminals.png?raw=true)
+
+Once complete, ssh into each instance into seperate terminals using your IDE (e.g. VSCode):
+
+![](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/ec2terminals.png?raw=true)
