@@ -8,3 +8,4 @@ When an application or webpage is hosted on a single computer for people to acce
 Now, lets say you have dozens or even hundreds of servers online to protect yourself from such situations, how do you ensure the workload of user requests is divided up efficiently between the servers. This is where a load balancer comes in and where Nginx can deliver. 
 
 ![loadbalancerNginx](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*TrNJZqECEj0eVuJDeNKtNQ.png)
+
