@@ -35,3 +35,15 @@ Suggested names (or your choice):
   Apache2Web
   nginxLB
 
+Update the package manager (apt) and install pache on both Apacher servers.
+
+    $ sudo apt update -y &&  sudo apt install apache2 -y
+
+Check apache is running on both servers:
+
+    $ sudo systemctl status apache2
+
+Confirmation:
+
+![apache2Installstatus](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/apache2status.png?raw=true)
+
