@@ -47,3 +47,21 @@ Confirmation:
 
 ![apache2Installstatus](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/apache2status.png?raw=true)
 
+Configure the Apache servers to display a webpage showing the Public IP address:
+- Configure web server to serve content on port 8000 (instead of default port 80)
+  - Open file:
+    
+        $ sudo vim /etc/apache2/ports.conf
+        
+      Now add 'Listen 8000' under 'Listen 80'
+
+![listen8000]()
+
+  - Open file:
+  
+        $ sudo vi /etc/apache2/sites-available/000-default.conf
+
+![8000virtualHost]()
+
+- Create new index.html file. This will contain the code to dsiaply the Public IP.
+- Override default html file with our new index file. 
