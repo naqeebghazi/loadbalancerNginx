@@ -55,13 +55,13 @@ Configure the Apache servers to display a webpage showing the Public IP address:
         
       Now add 'Listen 8000' under 'Listen 80'
 
-![listen8000]()
+![listen8000](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/listen8000.png?raw=true)
 
   - Open file:
   
         $ sudo vi /etc/apache2/sites-available/000-default.conf
 
-![8000virtualHost]()
+![8000virtualHost](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/8000VirtualHost.png?raw=true)
 
 - Create new index.html file. This will contain the code to dsiaply the Public IP.
 - Override default html file with our new index file. 
