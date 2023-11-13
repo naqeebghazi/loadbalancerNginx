@@ -11,4 +11,6 @@ Now, lets say you have dozens or even hundreds of servers online to protect your
 
 We will use our AWS account to provision three webservers, all running Ubuntu 22.04:
 
-![ec2instances](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/Screenshot%202023-11-13%20at%2011.26.07.png?raw=true)
+![ec2instances](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/ec2Instances.png?raw=true)
+
+
