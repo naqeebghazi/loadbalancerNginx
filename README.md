@@ -9,8 +9,18 @@ Now, lets say you have dozens or even hundreds of servers online to protect your
 
 ![loadbalancerNginx](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*TrNJZqECEj0eVuJDeNKtNQ.png)
 
-We will use our AWS account to provision three webservers, all running Ubuntu 22.04:
+We will use our AWS account to provision three webservers, all running Ubuntu 22.04. Two will become webservers and one will become the nginx load balancer.
 
 ![ec2instances](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/ec2Instances.png?raw=true)
 
+Each instance must be attached to a security group (SG) with the following settings:
 
+The two Apache webservers SG config:
+![](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/inboundRulesWebservers.png?raw=true)
+
+The One Nginx Load Balancer SG config:
+~[](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/inboundRulesWebservers.png?raw=true)
+
+
+Now SSh into tyour servers using your local terminal:
+![ec2terminals](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/ec2terminals.png?raw=true)
