@@ -151,8 +151,23 @@ Reload nginx and then test if the file config is ok:
 ## Type of Load Balancer Algorithms
 
 1. Round robin
-2. Leaset connections
+    - Distributes requests sequentially to each server in the pool
+    - Best when al servers have similar capabilities/resources
+    - Even distribution of traffic
+    - Simple to Implement
+2. Least connections
+    - Least busy server receives newest requests
+    - Traffic distributed to least busy server
+    - Best when servers have varying capabilities/workloads
 3. Weighted round robin
+    - Servers assigned different weights based on their capabilities
+    - Higher weight, more requests receievd
 4. Weighted least connections
+    - Servers assigned different weights based on their capabilities
+    - Higher weight, more connections receievd
+    - Balances traffic based on server capabilities
 5. IP Hash
+    - Ensures same client always reaches the same server suring a session
+    - Best for stateful sessions and maintaining session data
 
+    
