@@ -154,4 +154,5 @@ Reload nginx and then test if the file config is ok:
 2. Leaset connections
 3. Weighted round robin
 4. Weighted least connections
+5. IP Hash
 
