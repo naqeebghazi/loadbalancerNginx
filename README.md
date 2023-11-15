@@ -104,7 +104,7 @@ Get your public IP and paste this into your browser:
 
     $ wget -qO- ifconfig.me
 
-Browser view:
+Load balancer pages in web browser:
 
 ![browserInstancesview](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/browserinstances.png?raw=true)
 
