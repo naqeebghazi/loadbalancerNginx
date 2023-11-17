@@ -39,6 +39,17 @@ Update the package manager (apt) and install pache on both Apacher servers.
 
     $ sudo apt update -y &&  sudo apt install apache2 -y
 
+    $   Listen 80
+        Listen 8000
+        
+        <IfModule ssl_module>
+                Listen 443
+        </Module>
+        
+        <IfModule mod_gnutls.c>
+                Listen 443
+        </Module>
+
 Check apache is running on both servers:
 
     $ sudo systemctl status apache2
