@@ -39,16 +39,6 @@ Update the package manager (apt) and install pache on both Apacher servers.
 
     $ sudo apt update -y &&  sudo apt install apache2 -y
 
-    $   Listen 80
-        Listen 8000
-        
-        <IfModule ssl_module>
-                Listen 443
-        </Module>
-        
-        <IfModule mod_gnutls.c>
-                Listen 443
-        </Module>
 
 Check apache is running on both servers:
 
@@ -71,6 +61,18 @@ Configure the Apache servers to display a webpage showing the Public IP address:
   - Open file:
   
         $ sudo vi /etc/apache2/sites-available/000-default.conf
+
+Add "Listen 8000' as below:
+        Listen 80
+        Listen 8000
+        
+        <IfModule ssl_module>
+                Listen 443
+        </Module>
+        
+        <IfModule mod_gnutls.c>
+                Listen 443
+        </Module>
 
 ![8000virtualHost](https://github.com/naqeebghazi/loadbalancerNginx/blob/main/images/8000VirtualHost.png?raw=true)
 
